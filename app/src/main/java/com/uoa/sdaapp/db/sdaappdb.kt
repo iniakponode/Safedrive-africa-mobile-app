@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.uoa.deviceprofile.data.dao.DriverProfileDao
 import com.uoa.sensordatacollection.data.dao.SensorDao
-import com.uoa.trip.data.dao.TripDao
+import com.uoa.sensordatacollection.data.dao.TripDao
 
 @Database(
     entities = [

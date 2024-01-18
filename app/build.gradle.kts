@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -43,8 +44,8 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
 
     // Dagar Hilt
-//    implementation("com.google.dagger:hilt-android:2.48")
-//    ksp("com.google.dagger:hilt-android-compiler:2.42")
+    implementation("com.google.dagger:hilt-android:2.48")
+    ksp("com.google.dagger:hilt-android-compiler:2.42")
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.47")
 
 // Room dependencies
@@ -74,7 +75,7 @@ dependencies {
 
     // Project Modules
     implementation(project(":deviceprofile"))
-    implementation(project(":trip"))
+//    implementation(project(":trip"))
     implementation(project(":sensordatacollection"))
 
     testImplementation("junit:junit:4.13.2")

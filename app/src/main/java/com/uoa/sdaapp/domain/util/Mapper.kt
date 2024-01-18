@@ -1,8 +1,8 @@
 package com.uoa.sdaapp.domain.util
 
 import com.uoa.deviceprofile.data.model.DriverProfileDataEntity
-import com.uoa.trip.data.model.TripDataEntity
-import com.uoa.trip.domain.model.TripData
+import com.uoa.sensordatacollection.data.model.TripDataEntity
+import com.uoa.sensordatacollection.domain.model.TripData
 import com.uoa.deviceprofile.domain.model.DriverProfile as DProfile
 class Mapper {
     companion object{
