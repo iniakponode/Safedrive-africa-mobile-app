@@ -1,8 +1,8 @@
 package com.uoa.deviceprofile.data.datasources.moduleproviders
 
-import com.uoa.deviceprofile.data.api.DriverProfileApiService
+import com.uoa.core.appApiService.DriverProfileApiService
+import com.uoa.core.appApiService.RetrofitInstance
 import com.uoa.deviceprofile.data.datasources.RemoteDataSource
-import com.uoa.sdaapp.appApiService.RetrofitInstance
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,13 +14,13 @@ import javax.inject.Singleton
 object RemoteDataSourceModule {
     @Provides
     @Singleton
-    fun provideDriverProfileApiSensorService(): DriverProfileApiService{
+    fun provideDriverProfileApiSensorService(): DriverProfileApiService {
         return RetrofitInstance.getRetrofitInstance().create(DriverProfileApiService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideRemoteDataSource(driverProfileApiService: DriverProfileApiService): RemoteDataSource{
+    fun provideRemoteDataSource(driverProfileApiService: DriverProfileApiService): RemoteDataSource {
         return RemoteDataSource(driverProfileApiService)
     }
 

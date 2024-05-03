@@ -1,32 +1,32 @@
 package com.uoa.sensordatacollection.data.datasources.local
 
-import com.uoa.sensordatacollection.data.dao.SensorDao
-import com.uoa.sensordatacollection.data.model.SensorDataEntity
+import com.uoa.core.db.dao.SensorDao
+import com.uoa.core.db.entity.SensorDataEntity
 //import com.uoa.sdaapp.domain.util.Result
 //import retrofit2.Response
 
-class LocalSensorDataSource(private val sensorDataDao: SensorDao) {
+class LocalSensorDataSource(private val sensorDataDao: com.uoa.core.db.dao.SensorDao) {
 
     // Insert a single sensor data entity into the local database
-    suspend fun insertSensorData(sensorData: SensorDataEntity) {
+    suspend fun insertSensorData(sensorData: com.uoa.core.db.entity.SensorDataEntity) {
         sensorDataDao.insertSensorData(sensorData)
     }
 
     // Insert a list of sensor data entities into the local database
-    suspend fun insertAllSensorData(sensorDataList: List<SensorDataEntity>) {
+    suspend fun insertAllSensorData(sensorDataList: List<com.uoa.core.db.entity.SensorDataEntity>) {
         sensorDataDao.insertAllSensorData(sensorDataList)
     }
    // Get new Sensor data not yet synced to server
-    suspend fun getNewSensorData(synced: Boolean): List<SensorDataEntity>{
+    suspend fun getNewSensorData(synced: Boolean): List<com.uoa.core.db.entity.SensorDataEntity>{
         return sensorDataDao.getNewSensorData(synced)
     }
     // Get sensor data associated with a specific tripDataId from the local database
-    suspend fun getSensorDataForTrip(tripDataId: Long): List<SensorDataEntity> {
+    suspend fun getSensorDataForTrip(tripDataId: Long): List<com.uoa.core.db.entity.SensorDataEntity> {
         return sensorDataDao.getSensorDataForTrip(tripDataId)
     }
 
     // Get sensor data by its id from the local database
-    suspend fun getSensorDataById(sensorDataId: Long): SensorDataEntity? {
+    suspend fun getSensorDataById(sensorDataId: Long): com.uoa.core.db.entity.SensorDataEntity? {
         return sensorDataDao.getSensorDataById(sensorDataId)
     }
 

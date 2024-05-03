@@ -1,14 +1,14 @@
 package com.uoa.sensordatacollection.data.datasources.local
 
-import com.uoa.sensordatacollection.data.model.TripDataEntity
+import com.uoa.core.db.entity.TripDataEntity
 import javax.inject.Inject
 
 class LocalTripDataRepositoryImpl @Inject constructor(private val localTripDataSource: LocalTripDataSource): LocalTripDataRepository {
-    override suspend fun insertTripLocal(tripData: TripDataEntity): TripDataEntity {
+    override suspend fun insertTripLocal(tripData: com.uoa.core.db.entity.TripDataEntity): com.uoa.core.db.entity.TripDataEntity {
         return localTripDataSource.insertTripLocal(tripData)
     }
 
-    override suspend fun getTrip(tripId: Long): TripDataEntity{
+    override suspend fun getTrip(tripId: Long): com.uoa.core.db.entity.TripDataEntity {
         return localTripDataSource.getTrip(tripId)
     }
 
@@ -20,15 +20,15 @@ class LocalTripDataRepositoryImpl @Inject constructor(private val localTripDataS
         return localTripDataSource.deleteTripsForDriverLocal(driverProfileId)
     }
 
-    override suspend fun getTripsForDriverLocal(driverProfileId: Long): List<TripDataEntity> {
+    override suspend fun getTripsForDriverLocal(driverProfileId: Long): List<com.uoa.core.db.entity.TripDataEntity> {
         return localTripDataSource.getTripsForDriverLocal(driverProfileId)
     }
 
-    override suspend fun updateTrip(tripData: TripDataEntity): TripDataEntity{
+    override suspend fun updateTrip(tripData: com.uoa.core.db.entity.TripDataEntity): com.uoa.core.db.entity.TripDataEntity {
         return localTripDataSource.updateTrip(tripData)
     }
 
-    override suspend fun getNewTripData(synced: Boolean): List<TripDataEntity> {
+    override suspend fun getNewTripData(synced: Boolean): List<com.uoa.core.db.entity.TripDataEntity> {
         return localTripDataSource.getNewTripData(synced)
     }
 

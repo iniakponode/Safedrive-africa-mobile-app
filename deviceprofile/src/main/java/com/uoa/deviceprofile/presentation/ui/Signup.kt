@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.uoa.deviceprofile.domain.model.DriverProfile
 import com.uoa.deviceprofile.presentation.viewModel.DriverProfileViewModel
-import com.uoa.sdaapp.domain.util.DateUtils
+import com.uoa.core.util.DateUtils
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.Instant
 @RequiresApi(Build.VERSION_CODES.O)
@@ -55,7 +55,6 @@ fun DriverProfileView(viewModel: DriverProfileViewModel = hiltViewModel(),
                 TextField(value = phone.value, onValueChange = { phone.value= it }, label = { Text("Phone") })
 
             }
-
 
             Column(
                 modifier = Modifier.weight(1f),

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.uoa.deviceprofile.domain.model.DriverProfile
 import com.uoa.deviceprofile.domain.repository.DriverProfileLoginRepo
 import javax.inject.Inject
-import com.uoa.sdaapp.domain.util.Result
+import com.uoa.core.util.Result
 
 class LocalLogin @Inject constructor(
     private val repo: DriverProfileLoginRepo

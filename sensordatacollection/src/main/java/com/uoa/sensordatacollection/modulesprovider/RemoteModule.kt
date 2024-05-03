@@ -1,7 +1,7 @@
 package com.uoa.sensordatacollection.modulesprovider
 
 //import com.uoa.sdaapp.appApiService.RetrofitInstance
-import com.uoa.sensordatacollection.data.api.SensorDataApiService
+import com.uoa.core.appApiService.SensorDataApiService
 import com.uoa.sensordatacollection.data.datasources.remote.RemoteSensorDataSource
 import dagger.Module
 import dagger.Provides
@@ -15,7 +15,7 @@ object RemoteModule {
 
     @Singleton
     @Provides
-    fun provideRemoteSensorDataSource(sensorDataApiService: SensorDataApiService): RemoteSensorDataSource {
+    fun provideRemoteSensorDataSource(sensorDataApiService: com.uoa.core.appApiService.SensorDataApiService): RemoteSensorDataSource {
         return RemoteSensorDataSource(sensorDataApiService)
     }
 }

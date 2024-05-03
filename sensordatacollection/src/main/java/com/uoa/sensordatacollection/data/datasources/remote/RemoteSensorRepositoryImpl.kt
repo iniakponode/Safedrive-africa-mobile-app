@@ -1,23 +1,23 @@
 package com.uoa.sensordatacollection.data.datasources.remote
 
-import com.uoa.sensordatacollection.data.model.SensorDataEntity
+import com.uoa.core.db.entity.SensorDataEntity
 import javax.inject.Inject
 
 class RemoteSensorRepositoryImpl @Inject constructor(private val remoteSensorDataSource: RemoteSensorDataSource) : RemoteSensorRepository {
 
-    override suspend fun sendSensorData(sensorData: SensorDataEntity) {
+    override suspend fun sendSensorData(sensorData: com.uoa.core.db.entity.SensorDataEntity) {
         remoteSensorDataSource.sendSensorData(sensorData)
     }
 
-    override suspend fun sendBulkSensorData(sensorDataList: List<SensorDataEntity>) {
+    override suspend fun sendBulkSensorData(sensorDataList: List<com.uoa.core.db.entity.SensorDataEntity>) {
         remoteSensorDataSource.sendBulkSensorData(sensorDataList)
     }
 
-    override suspend fun getSensorDataForTrip(tripDataId: Long): List<SensorDataEntity> {
+    override suspend fun getSensorDataForTrip(tripDataId: Long): List<com.uoa.core.db.entity.SensorDataEntity> {
         return remoteSensorDataSource.getSensorDataForTrip(tripDataId)
     }
 
-    override suspend fun getSensorDataById(sensorDataId: Long): SensorDataEntity {
+    override suspend fun getSensorDataById(sensorDataId: Long): com.uoa.core.db.entity.SensorDataEntity {
         return remoteSensorDataSource.getSensorDataById(sensorDataId)
     }
 

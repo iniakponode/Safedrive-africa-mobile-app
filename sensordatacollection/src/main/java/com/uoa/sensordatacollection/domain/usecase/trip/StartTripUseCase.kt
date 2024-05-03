@@ -1,7 +1,7 @@
 package com.uoa.sensordatacollection.domain.usecase.trip
 
 import com.uoa.sensordatacollection.data.datasources.local.LocalTripDataRepository
-import com.uoa.sensordatacollection.data.model.TripDataEntity
+import com.uoa.core.db.entity.TripDataEntity
 import com.uoa.sensordatacollection.domain.Mapper.Companion.convertTripDataToEntityModel
 import com.uoa.sensordatacollection.domain.model.TripData
 
@@ -11,7 +11,7 @@ class StartTripUseCase @Inject constructor(
     private val localTripRepository: LocalTripDataRepository
 ) {
 
-    suspend fun execute(driverProfileId: Long): TripDataEntity {
+    suspend fun execute(driverProfileId: Long): com.uoa.core.db.entity.TripDataEntity {
         // Create a domain model for trip start with endTime set to null
         val startTime = System.currentTimeMillis()
         val tripData = TripData(driverProfileId = driverProfileId, startTime = startTime, endTime = null)

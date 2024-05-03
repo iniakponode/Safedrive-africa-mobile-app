@@ -1,11 +1,11 @@
 package com.uoa.deviceprofile.domain.usecase
 
-import com.uoa.sdaapp.domain.util.Mapper.Companion.convertDriverProfileModelToEntity
+import com.uoa.core.util.Mapper.Companion.convertDriverProfileModelToEntity
 import com.uoa.deviceprofile.domain.model.DriverProfile
 import com.uoa.deviceprofile.domain.repository.DriverProfileSignupRepo
-import com.uoa.sdaapp.domain.util.Mapper.Companion.convertDriverProfileEntityToDomainModel
+import com.uoa.core.util.Mapper.Companion.convertDriverProfileEntityToDomainModel
 import javax.inject.Inject
-import com.uoa.sdaapp.domain.util.Result
+import com.uoa.core.util.Result
 import retrofit2.HttpException
 
 class Signup @Inject constructor(private val repository: DriverProfileSignupRepo) {

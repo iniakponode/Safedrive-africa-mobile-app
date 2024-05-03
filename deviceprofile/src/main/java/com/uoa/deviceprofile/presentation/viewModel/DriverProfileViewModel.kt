@@ -6,15 +6,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 
-import com.uoa.deviceprofile.data.model.DriverProfileDataEntity
-import com.uoa.sdaapp.domain.util.Mapper.Companion.convertDriverProfileModelToEntity
+import com.uoa.core.db.entity.DriverProfileDataEntity
+import com.uoa.core.util.Mapper.Companion.convertDriverProfileModelToEntity
 import com.uoa.deviceprofile.domain.model.DriverProfile as DProfile
 import com.uoa.deviceprofile.domain.usecase.LocalLogin
 import com.uoa.deviceprofile.domain.usecase.Signup
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.uoa.sdaapp.domain.util.Result.*
+import com.uoa.core.util.Result.*
 
 @HiltViewModel
 class DriverProfileViewModel @Inject constructor(

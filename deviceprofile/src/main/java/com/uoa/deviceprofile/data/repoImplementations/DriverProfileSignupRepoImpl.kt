@@ -2,7 +2,7 @@ package com.uoa.deviceprofile.data.repoImplementations
 
 import com.uoa.deviceprofile.data.datasources.LocalDataSource
 import com.uoa.deviceprofile.data.datasources.RemoteDataSource
-import com.uoa.deviceprofile.data.model.DriverProfileDataEntity
+import com.uoa.core.db.entity.DriverProfileDataEntity
 import com.uoa.deviceprofile.domain.repository.DriverProfileSignupRepo
 import retrofit2.Response
 import javax.inject.Inject

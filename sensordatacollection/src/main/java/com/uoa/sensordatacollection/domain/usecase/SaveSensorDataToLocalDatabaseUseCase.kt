@@ -1,13 +1,13 @@
 package com.uoa.sensordatacollection.domain.usecase
 
 import com.uoa.sensordatacollection.data.datasources.local.LocalSensorRepository
-import com.uoa.sensordatacollection.data.model.SensorDataEntity
+import com.uoa.core.db.entity.SensorDataEntity
 import javax.inject.Inject
 
 class SaveSensorDataToLocalDatabaseUseCase @Inject constructor(
     private val localSensorRepository: LocalSensorRepository
 ) {
-    suspend fun execute(sensorDataEntity: SensorDataEntity){
+    suspend fun execute(sensorDataEntity: com.uoa.core.db.entity.SensorDataEntity){
         return localSensorRepository.insertSensorData(sensorDataEntity)
     }
 }

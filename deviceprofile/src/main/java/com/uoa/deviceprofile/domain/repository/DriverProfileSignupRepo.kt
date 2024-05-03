@@ -1,6 +1,6 @@
 package com.uoa.deviceprofile.domain.repository
 
-import com.uoa.deviceprofile.data.model.DriverProfileDataEntity
+import com.uoa.core.db.entity.DriverProfileDataEntity
 //import com.uoa.deviceprofile.data.model.DriverProfile
 import retrofit2.Response
 

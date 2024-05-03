@@ -1,6 +1,6 @@
 package com.uoa.deviceprofile.presentation.di
 
-import com.uoa.deviceprofile.data.dao.DriverProfileDao
+import com.uoa.core.db.dao.DriverProfileDao
 import com.uoa.deviceprofile.data.datasources.LocalDataSource
 import dagger.Module
 import dagger.Provides

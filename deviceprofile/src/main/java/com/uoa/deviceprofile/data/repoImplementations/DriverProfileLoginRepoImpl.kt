@@ -3,13 +3,13 @@ package com.uoa.deviceprofile.data.repoImplementations
 import androidx.lifecycle.LiveData
 import com.uoa.deviceprofile.data.datasources.LocalDataSource
 import com.uoa.deviceprofile.data.datasources.RemoteDataSource
-import com.uoa.deviceprofile.data.model.DriverProfileDataEntity
+import com.uoa.core.db.entity.DriverProfileDataEntity
 import com.uoa.deviceprofile.domain.model.DriverProfile as DProfile
 import com.uoa.deviceprofile.domain.repository.DriverProfileLoginRepo
-import com.uoa.sdaapp.domain.util.Result
 import androidx.lifecycle.liveData
-import com.uoa.sdaapp.domain.util.Mapper.Companion.convertDriverProfileEntityToDomainModel
+import com.uoa.core.util.Mapper.Companion.convertDriverProfileEntityToDomainModel
 import retrofit2.Response
+import com.uoa.core.util.Result
 import javax.inject.Inject
 
 class DriverProfileLoginRepoImpl @Inject constructor(private val localDataSource: LocalDataSource, private val remoteDataSource: RemoteDataSource): DriverProfileLoginRepo {

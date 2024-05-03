@@ -1,19 +1,19 @@
 package com.uoa.sensordatacollection.data.datasources.local
 
-import com.uoa.sensordatacollection.data.dao.TripDao
-import com.uoa.sensordatacollection.data.model.TripDataEntity
+import com.uoa.core.db.dao.TripDao
+import com.uoa.core.db.entity.TripDataEntity
 
 
 // LocalTripDataSource implementation
-class LocalTripDataSource(private val tripDao: TripDao) {
+class LocalTripDataSource(private val tripDao: com.uoa.core.db.dao.TripDao) {
 
-    suspend fun insertTripLocal(tripData: TripDataEntity): TripDataEntity{
+    suspend fun insertTripLocal(tripData: com.uoa.core.db.entity.TripDataEntity): com.uoa.core.db.entity.TripDataEntity {
        return tripDao.insertTrip(tripData)
     }
-    suspend fun updateTrip(tripData: TripDataEntity): TripDataEntity {
+    suspend fun updateTrip(tripData: com.uoa.core.db.entity.TripDataEntity): com.uoa.core.db.entity.TripDataEntity {
         return tripDao.updateTrip(tripData)
     }
-    suspend fun getTrip(tripId: Long): TripDataEntity {
+    suspend fun getTrip(tripId: Long): com.uoa.core.db.entity.TripDataEntity {
         return tripDao.getTrip(tripId)
     }
     suspend fun deleteTripByIdLocal(tripId: Long) {
@@ -24,11 +24,11 @@ class LocalTripDataSource(private val tripDao: TripDao) {
         tripDao.deleteTripsForDriver(driverProfileId)
     }
 
-    suspend fun getTripsForDriverLocal(driverProfileId: Long): List<TripDataEntity> {
+    suspend fun getTripsForDriverLocal(driverProfileId: Long): List<com.uoa.core.db.entity.TripDataEntity> {
         return tripDao.getTripsForDriver(driverProfileId)
     }
 
-    suspend fun getNewTripData(synced: Boolean): List<TripDataEntity>{
+    suspend fun getNewTripData(synced: Boolean): List<com.uoa.core.db.entity.TripDataEntity>{
         return tripDao.getNewTripData(synced)
     }
 

@@ -1,7 +1,7 @@
 package com.uoa.deviceprofile.data.datasources
 
-import com.uoa.deviceprofile.data.model.DriverProfileDataEntity
-import com.uoa.deviceprofile.data.dao.DriverProfileDao
+import com.uoa.core.db.entity.DriverProfileDataEntity
+import com.uoa.core.db.dao.DriverProfileDao
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -19,6 +19,8 @@ class LocalDataSource @Inject constructor(private val deviceProfileDao: DriverPr
     suspend fun getprofiles(): Flow<List<DriverProfileDataEntity>> {
         return deviceProfileDao.getAllDeviceProfiles()
     }
+
+
 
     // Other local database operations
 }

@@ -38,9 +38,10 @@ android {
 
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.7"
+        kotlinCompilerExtensionVersion = "1.5.8"
     }
 
     dependencies {
@@ -99,6 +100,16 @@ android {
         implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
 
 //    other project modules
-        implementation(project(":app"))
+        implementation(project(":core"))
     }
+}
+dependencies {
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.android.material:material:1.4.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
 }
