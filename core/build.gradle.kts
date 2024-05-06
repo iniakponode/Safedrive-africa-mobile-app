@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.uoa.sdaapp"
+    namespace = "com.uoa.core"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.uoa.sdaapp"
+        applicationId = "com.uoa.core"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

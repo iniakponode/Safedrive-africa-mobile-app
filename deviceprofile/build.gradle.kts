@@ -45,7 +45,7 @@ android {
     }
 
     dependencies {
-        implementation("com.google.devtools.ksp:symbol-processing-api:1.9.0-1.0.13")
+        implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.17")
         implementation("androidx.core:core-ktx:1.12.0")
         implementation("androidx.appcompat:appcompat:1.6.1")
         implementation("com.google.android.material:material:1.11.0")
