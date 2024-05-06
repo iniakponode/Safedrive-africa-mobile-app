@@ -1,8 +1,6 @@
 package com.uoa.sensordatacollection.domain.usecase.trip
 
 import com.uoa.sensordatacollection.data.datasources.local.LocalTripDataRepository
-import com.uoa.core.db.entity.TripDataEntity
-import com.uoa.sensordatacollection.domain.Mapper.Companion.convertTripDataToEntityModel
 import com.uoa.sensordatacollection.domain.model.TripData
 
 import javax.inject.Inject

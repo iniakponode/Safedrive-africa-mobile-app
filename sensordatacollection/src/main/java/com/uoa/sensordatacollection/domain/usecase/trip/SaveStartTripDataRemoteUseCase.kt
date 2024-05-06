@@ -1,7 +1,6 @@
 package com.uoa.sensordatacollection.domain.usecase.trip
 
 import com.uoa.sensordatacollection.data.datasources.remote.RemoteTripRepository
-import com.uoa.sensordatacollection.domain.Mapper
 import com.uoa.sensordatacollection.domain.model.TripData
 import javax.inject.Inject
 

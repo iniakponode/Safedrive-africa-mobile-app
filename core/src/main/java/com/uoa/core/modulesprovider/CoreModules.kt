@@ -30,6 +30,8 @@ object CoreModules {
         return appDatabase.driverProfile()
     }
 
+
+
     @Singleton
     @Provides
     fun provideAppDatabase(@ApplicationContext context: Context): Sdaapp {
@@ -51,6 +53,7 @@ object CoreModules {
     fun provideSensorDataDao(appDatabase: Sdaapp): SensorDao {
         return appDatabase.sensordao()
     }
+
 
     @Singleton
     @Provides

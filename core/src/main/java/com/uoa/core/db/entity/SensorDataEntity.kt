@@ -72,27 +72,23 @@ data class SensorDataEntity(
         parcel.writeLong(tripDataId)
         parcel.writeLong(timestamp)
         parcel.writeBoolean(synced)
-        parcel.writeFloatArray(
-            floatArrayOf(
-                accelerometerX,
-                accelerometerY,
-                accelerometerZ,
-                gyroscopeX,
-                gyroscopeY,
-                gyroscopeZ,
-                magnetometerX,
-                magnetometerY,
-                magnetometerZ,
-                rotationVectorX,
-                rotationVectorY,
-                rotationVectorZ,
-                rotationVectorScalar,
-                linearAccelerationX,
-                linearAccelerationY,
-                linearAccelerationZ,
+        parcel.writeFloat(accelerometerX)
+        parcel.writeFloat(accelerometerY)
+        parcel.writeFloat(accelerometerZ)
+        parcel.writeFloat(gyroscopeX)
+        parcel.writeFloat(gyroscopeY)
+        parcel.writeFloat(gyroscopeZ)
+        parcel.writeFloat(magnetometerX)
+        parcel.writeFloat(magnetometerY)
+        parcel.writeFloat(magnetometerZ)
+        parcel.writeFloat(rotationVectorX)
+        parcel.writeFloat(rotationVectorY)
+        parcel.writeFloat(rotationVectorZ)
+        parcel.writeFloat(rotationVectorScalar)
+        parcel.writeFloat(linearAccelerationX)
+        parcel.writeFloat(linearAccelerationY)
+        parcel.writeFloat(linearAccelerationZ)
                 // Add other float fields accordingly
-            )
-        )
     }
 
     override fun describeContents(): Int {

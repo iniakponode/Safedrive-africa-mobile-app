@@ -16,7 +16,7 @@ interface TripDao {
      * @param tripData The trip data to be inserted.
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTrip(tripData: TripDataEntity) :TripDataEntity
+    suspend fun insertTrip(tripData: TripDataEntity) : Long
 
     /**
      * Delete a trip by its id.
@@ -58,8 +58,7 @@ interface TripDao {
      * @param tripData The trip data to be updated.
      */
     @Update
-    suspend fun updateTrip(tripData: TripDataEntity): TripDataEntity
-
+    suspend fun updateTrip(tripData: TripDataEntity): Int
     @Query("SELECT * FROM trip_data WHERE synced = :syncd")
     suspend fun getNewTripData(syncd: Boolean): List<TripDataEntity>
 

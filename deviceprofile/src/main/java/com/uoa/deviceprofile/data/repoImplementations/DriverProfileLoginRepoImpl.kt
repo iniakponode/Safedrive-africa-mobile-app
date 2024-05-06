@@ -7,7 +7,7 @@ import com.uoa.core.db.entity.DriverProfileDataEntity
 import com.uoa.deviceprofile.domain.model.DriverProfile as DProfile
 import com.uoa.deviceprofile.domain.repository.DriverProfileLoginRepo
 import androidx.lifecycle.liveData
-import com.uoa.core.util.Mapper.Companion.convertDriverProfileEntityToDomainModel
+import com.uoa.deviceprofile.util.Mapper.Companion.convertDriverProfileEntityToDomainModel
 import retrofit2.Response
 import com.uoa.core.util.Result
 import javax.inject.Inject

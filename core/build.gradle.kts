@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
 
@@ -38,22 +39,24 @@ android {
 }
 
 dependencies {
-    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.0-1.0.13")
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.22-1.0.17")
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
 
     // Dagar Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
+    implementation("com.google.dagger:hilt-android:2.51")
+    implementation("androidx.annotation:annotation:1.7.1")
     ksp("com.google.dagger:hilt-android-compiler:2.42")
-    implementation("com.google.dagger:hilt-android-gradle-plugin:2.47")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:2.51")
 
 // Room dependencies
     implementation("androidx.room:room-runtime:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
 
     // Kotlin Parcelable
-    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10")
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20")
     implementation("org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.9.22")
 //    implementation ("org.jetbrains.kotlinx:kotlinx-parcelize-runtime:1.5.0")
 //    ksp ("org.jetbrains.kotlinx:kotlinx-parcelize-compiler:1.5.0")

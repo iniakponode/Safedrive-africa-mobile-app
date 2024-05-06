@@ -15,7 +15,7 @@
             android:label="@string/title_activity_registration"
             android:resizeableActivity="true"
             android:theme="@style/Theme.SDAAPP.NoActionBar"
-            tools:targetApi="24">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

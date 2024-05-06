@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 
 import com.uoa.core.db.entity.DriverProfileDataEntity
-import com.uoa.core.util.Mapper.Companion.convertDriverProfileModelToEntity
+import com.uoa.deviceprofile.util.Mapper.Companion.convertDriverProfileModelToEntity
 import com.uoa.deviceprofile.domain.model.DriverProfile as DProfile
 import com.uoa.deviceprofile.domain.usecase.LocalLogin
 import com.uoa.deviceprofile.domain.usecase.Signup

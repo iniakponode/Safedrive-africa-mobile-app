@@ -11,13 +11,7 @@
       <entry key="deviceprofile">
         <State />
       </entry>
-      <entry key="sensor">
-        <State />
-      </entry>
       <entry key="sensordatacollection">
-        <State />
-      </entry>
-      <entry key="trip">
         <State />
       </entry>
     </value>

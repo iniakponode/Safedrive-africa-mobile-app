@@ -7,7 +7,7 @@ data class DriverProfile(
     val drivingSchool: Boolean,
     val drivingLicense: Boolean,
     val email: String,
-    val phone: String,
+//    val phone: String,
     val phoneType: String,
     val password: String,
     val registrationDateTime: String

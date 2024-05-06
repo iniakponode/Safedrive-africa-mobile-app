@@ -14,7 +14,7 @@ interface DriverProfileDao {
     suspend fun insert(profile: DriverProfileDataEntity)
 
     @Query("SELECT * FROM device_profiles WHERE email = :email AND password = :password")
-    fun getProfile(email: String, password: String): DriverProfileDataEntity?
+    suspend fun getProfile(email: String, password: String): DriverProfileDataEntity?
 
     @Query("Select * From device_profiles")
     fun getAllDeviceProfiles(): Flow<List<DriverProfileDataEntity>>

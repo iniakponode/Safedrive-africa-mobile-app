@@ -5,6 +5,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
@@ -13,37 +14,24 @@ import kotlinx.android.parcel.Parcelize
 data class DriverProfileDataEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
-    val driverType: String, // Public or Private
-    val vehicleType: String, // Taxi, Bus, Trailer, Lorry
-    val educationLevel: String, // No school, Primary, Secondary, University
-    val drivingSchool: Boolean, // Yes or No
-    val drivingLicense: Boolean, // Yes or No
-    val email: String, // Driver's email
-    val phoneType: String, // Type of phone
-    val password: String, // Password
-    val registrationDateTime: String // Registration date and time
-) : Parcelable {
+    val driverType: String = "",
+    val vehicleType: String = "",
+    val educationLevel: String = "",
+    val drivingSchool: Boolean = false,
+    val drivingLicense: Boolean = false,
+    val email: String = "",
+    val phoneType: String = "",
+    val password: String = "",
+    val registrationDateTime: String = ""
+)
+    : Parcelable {
 
-    @RequiresApi(Build.VERSION_CODES.Q)
-    constructor(parcel: Parcel) : this(
-        parcel.readLong(),
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readBoolean(),
-        parcel.readBoolean(),
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!
-    )
-    override fun describeContents(): Int {
-        return 0
-    }
+    override fun describeContents(): Int = 0
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeLong(id)
+        parcel.writeString(driverType)
         parcel.writeString(vehicleType)
         parcel.writeString(educationLevel)
         parcel.writeBoolean(drivingSchool)
@@ -56,12 +44,21 @@ data class DriverProfileDataEntity(
 
     companion object CREATOR : Parcelable.Creator<DriverProfileDataEntity> {
         @RequiresApi(Build.VERSION_CODES.Q)
-        override fun createFromParcel(parcel: Parcel): DriverProfileDataEntity {
-            return DriverProfileDataEntity(parcel)
-        }
+        override fun createFromParcel(parcel: Parcel): DriverProfileDataEntity = DriverProfileDataEntity(
+            id = parcel.readLong(),
+            driverType = parcel.readString() ?: "",
+            vehicleType = parcel.readString() ?: "",
+            educationLevel = parcel.readString() ?: "",
+            drivingSchool = parcel.readBoolean(),
+            drivingLicense = parcel.readBoolean(),
+            email = parcel.readString() ?: "",
+            phoneType = parcel.readString() ?: "",
+            password = parcel.readString() ?: "",
+            registrationDateTime = parcel.readString() ?: ""
+        )
 
-        override fun newArray(size: Int): Array<DriverProfileDataEntity?> {
-            return arrayOfNulls(size)
-        }
+        override fun newArray(size: Int): Array<DriverProfileDataEntity?> = arrayOfNulls(size)
     }
 }
+
+

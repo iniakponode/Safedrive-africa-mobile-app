@@ -8,14 +8,12 @@ import androidx.lifecycle.Observer
 import androidx.work.Constraints
 import androidx.work.CoroutineWorker
 import androidx.work.NetworkType
-import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 
 import com.uoa.sensordatacollection.data.datasources.local.LocalTripDataRepository
-import com.uoa.sensordatacollection.domain.Mapper
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.Dispatchers

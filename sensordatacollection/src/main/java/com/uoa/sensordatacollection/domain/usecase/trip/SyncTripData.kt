@@ -13,7 +13,6 @@ import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import com.uoa.sensordatacollection.data.datasources.local.LocalTripDataRepository
-import com.uoa.sensordatacollection.domain.Mapper
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.Dispatchers
