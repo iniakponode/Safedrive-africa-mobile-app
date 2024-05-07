@@ -14,9 +14,9 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "SDAAPP"
-include(":app")
 include(":deviceprofile")
-include(":trip")
 //include(":sensor")
 include(":sensordatacollection")
-include(":core")
+//include(":core")
+include(":co")
+include(":app")

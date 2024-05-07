@@ -1,27 +1,27 @@
 package com.uoa.sensordatacollection.data.datasources.remote
 
-import com.uoa.core.appApiService.SensorDataApiService
-import com.uoa.core.db.entity.SensorDataEntity
+import com.uoa.co.appApiService.SensorDataApiService
+import com.uoa.co.db.entity.SensorDataEntity
 
-class RemoteSensorDataSource(private val apiService: com.uoa.core.appApiService.SensorDataApiService) {
+class RemoteSensorDataSource(private val apiService: com.uoa.co.appApiService.SensorDataApiService) {
 
     // Send a single sensor data entity to the remote server
-    suspend fun sendSensorData(sensorData: com.uoa.core.db.entity.SensorDataEntity) {
+    suspend fun sendSensorData(sensorData: com.uoa.co.db.entity.SensorDataEntity) {
         apiService.sendSensorData(sensorData)
     }
 
     // Send a list of sensor data entities to the remote server
-    suspend fun sendBulkSensorData(sensorDataList: List<com.uoa.core.db.entity.SensorDataEntity>) {
+    suspend fun sendBulkSensorData(sensorDataList: List<com.uoa.co.db.entity.SensorDataEntity>) {
         apiService.sendBulkSensorData(sensorDataList)
     }
 
     // Get sensor data associated with a specific tripDataId from the remote server
-    suspend fun getSensorDataForTrip(tripDataId: Long): List<com.uoa.core.db.entity.SensorDataEntity> {
+    suspend fun getSensorDataForTrip(tripDataId: Long): List<com.uoa.co.db.entity.SensorDataEntity> {
         return apiService.getSensorDataForTrip(tripDataId)
     }
 
     // Get sensor data by its id from the remote server
-    suspend fun getSensorDataById(sensorDataId: Long): com.uoa.core.db.entity.SensorDataEntity {
+    suspend fun getSensorDataById(sensorDataId: Long): com.uoa.co.db.entity.SensorDataEntity {
         return apiService.getSensorDataById(sensorDataId)
     }
 

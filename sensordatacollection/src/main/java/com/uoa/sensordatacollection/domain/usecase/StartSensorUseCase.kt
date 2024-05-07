@@ -1,7 +1,6 @@
 package com.uoa.sensordatacollection.domain.usecase
 
 import android.util.Log
-import androidx.compose.runtime.Composable
 import android.content.Context
 import com.uoa.sensordatacollection.data.AndroidSensor
 import com.uoa.sensordatacollection.data.TrackingSensor

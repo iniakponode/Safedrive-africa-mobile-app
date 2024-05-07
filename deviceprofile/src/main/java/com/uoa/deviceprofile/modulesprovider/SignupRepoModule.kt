@@ -1,8 +1,7 @@
 package com.uoa.deviceprofile.modulesprovider
 
-import com.uoa.deviceprofile.data.repoImplementations.DriverProfileLoginRepoImpl
 import com.uoa.deviceprofile.data.repoImplementations.DriverProfileSignupRepoImpl
-import com.uoa.deviceprofile.domain.repository.DriverProfileLoginRepo
+import com.uoa.deviceprofile.data.repository.DriverProfileLoginRepo
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

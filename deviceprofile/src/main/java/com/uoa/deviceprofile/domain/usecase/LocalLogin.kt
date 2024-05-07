@@ -2,14 +2,14 @@ package com.uoa.deviceprofile.domain.usecase
 
 import androidx.lifecycle.LiveData
 import com.uoa.deviceprofile.domain.model.DriverProfile
-import com.uoa.deviceprofile.domain.repository.DriverProfileLoginRepo
+import com.uoa.deviceprofile.data.repoImplementations.DriverProfileLoginRepoImpl
 import javax.inject.Inject
-import com.uoa.core.util.Result
 
 class LocalLogin @Inject constructor(
-    private val repo: DriverProfileLoginRepo
+    private val repo: DriverProfileLoginRepoImpl
 ) {
-    suspend fun execute(email: String, password: String): LiveData<Result<DriverProfile?>> {
+//    use case to login the driver locally using email and password.
+    suspend fun execute(email: String, password: String): LiveData<com.uoa.co.util.Result<DriverProfile?>> {
         return repo.login(email, password)
     }
 }

@@ -1,6 +1,6 @@
 package com.uoa.sensordatacollection.domain.usecase
 
-import com.uoa.core.db.entity.SensorDataEntity
+import com.uoa.co.db.entity.SensorDataEntity
 import javax.inject.Inject
 
 class SaveSensorReadingsUseCase @Inject constructor(
@@ -19,7 +19,7 @@ class SaveSensorReadingsUseCase @Inject constructor(
     ) {
         // Create SensorDataEntity and save to local database
         val timestamp = System.currentTimeMillis()
-        val sensorDataEntity = com.uoa.core.db.entity.SensorDataEntity(
+        val sensorDataEntity = com.uoa.co.db.entity.SensorDataEntity(
             tripDataId = tripId,
             timestamp = timestamp,
             accelerometerX = accelerometerReading[0],

@@ -1,7 +1,7 @@
 package com.uoa.deviceprofile.data.datasources
 
-import com.uoa.core.appApiService.DriverProfileApiService
-import com.uoa.core.db.entity.DriverProfileDataEntity
+import com.uoa.co.appApiService.DriverProfileApiService
+import com.uoa.co.db.entity.DriverProfileDataEntity
 import retrofit2.Response
 import javax.inject.Inject
 

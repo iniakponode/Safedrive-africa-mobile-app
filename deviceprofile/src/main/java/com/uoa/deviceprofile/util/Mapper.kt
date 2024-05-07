@@ -1,13 +1,13 @@
 package com.uoa.deviceprofile.util
 
-import com.uoa.core.db.entity.DriverProfileDataEntity
-import com.uoa.core.db.entity.TripDataEntity
-import com.uoa.deviceprofile.domain.model.TripData
+import com.uoa.co.db.entity.DriverProfileDataEntity
+import com.uoa.co.db.entity.TripDataEntity
+
 import com.uoa.deviceprofile.domain.model.DriverProfile as DProfile
 class Mapper {
     companion object{
-        fun convertDriverProfileModelToEntity(domainClass: DProfile): DriverProfileDataEntity {
-            return DriverProfileDataEntity(
+        fun convertDriverProfileModelToEntity(domainClass: DProfile): com.uoa.co.db.entity.DriverProfileDataEntity {
+            return com.uoa.co.db.entity.DriverProfileDataEntity(
                 driverType = domainClass.driverType,
                 vehicleType = domainClass.vehicleType,
                 password = domainClass.password,

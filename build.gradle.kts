@@ -10,7 +10,7 @@ plugins {
 buildscript {
     dependencies {
 //        classpath ("org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin}")
-        classpath(kotlin("gradle-plugin", version = "1.9.21"))
+        classpath(kotlin("gradle-plugin", version = "1.9.22"))
     }
 }
 //repositories {

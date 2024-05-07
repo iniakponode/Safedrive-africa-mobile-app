@@ -2,32 +2,21 @@ package com.uoa.deviceprofile.domain.usecase
 
 import com.uoa.deviceprofile.util.Mapper.Companion.convertDriverProfileModelToEntity
 import com.uoa.deviceprofile.domain.model.DriverProfile
-import com.uoa.deviceprofile.domain.repository.DriverProfileSignupRepo
-import com.uoa.deviceprofile.util.Mapper.Companion.convertDriverProfileEntityToDomainModel
 import javax.inject.Inject
-import com.uoa.core.util.Result
-import retrofit2.HttpException
+import com.uoa.deviceprofile.data.repoImplementations.DriverProfileSignupRepoImpl
 
-class Signup @Inject constructor(private val repository: DriverProfileSignupRepo) {
-    suspend fun execute(driverProfile: DriverProfile): Result<DriverProfile> {
-        return try {
-            val response = repository.signup(convertDriverProfileModelToEntity(driverProfile))
-
-            if (response.isSuccessful) {
-                response.body()?.let {
-                    if (repository.storeDriverProfile(convertDriverProfileModelToEntity(driverProfile))) {
-                        Result.Success(convertDriverProfileEntityToDomainModel(it))
-                    } else {
-                        Result.Error(Exception("Failed to store driver profile locally"))
-                    }
-                } ?: Result.Error(Exception("Null response body"))
+class Signup @Inject constructor(private val repository: DriverProfileSignupRepoImpl) {
+    suspend fun execute(driverProfile: DriverProfile): DriverProfile {
+        val driverProfileEntity = convertDriverProfileModelToEntity(driverProfile)
+        try {
+            val result=repository.localSignUp(driverProfileEntity)
+            if (result>0) {
+                return driverProfile
             } else {
-                Result.Error(HttpException(response))
+                throw Exception("Error during signup: ${result}")
             }
-        } catch (e: HttpException) {
-            Result.Error(e)
-        } catch (e: Exception) {
-            Result.Error(e)
+        }   catch (e: Exception) {
+            throw e
         }
     }
 

@@ -2,16 +2,16 @@ package com.uoa.sensordatacollection.util
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.uoa.core.db.entity.DriverProfileDataEntity
-import com.uoa.core.db.entity.SensorDataEntity
-import com.uoa.core.db.entity.TripDataEntity
+import com.uoa.co.db.entity.DriverProfileDataEntity
+import com.uoa.co.db.entity.SensorDataEntity
+import com.uoa.co.db.entity.TripDataEntity
 import com.uoa.sensordatacollection.domain.model.SensorData
 import com.uoa.sensordatacollection.domain.model.TripData
 class Mapper {
     companion object {
 
 
-        fun convertTripEntityToDomainModel(entity: TripDataEntity): TripData {
+        fun convertTripEntityToDomainModel(entity: com.uoa.co.db.entity.TripDataEntity): TripData {
             return TripData(
                 id = entity.id,
                 driverProfileId = entity.driverProfileId,
@@ -20,8 +20,8 @@ class Mapper {
             )
         }
 
-        fun convertTripDataToEntityModel(data: TripData): TripDataEntity {
-            return TripDataEntity(
+        fun convertTripDataToEntityModel(data: TripData): com.uoa.co.db.entity.TripDataEntity {
+            return com.uoa.co.db.entity.TripDataEntity(
                 id = data.id,
                 driverProfileId = data.driverProfileId,
                 startTime = data.startTime,
@@ -29,7 +29,7 @@ class Mapper {
             )
         }
 
-        fun convertSensorEntityToDomainModel(entity: SensorDataEntity): SensorData {
+        fun convertSensorEntityToDomainModel(entity: com.uoa.co.db.entity.SensorDataEntity): SensorData {
             return SensorData(
                 id = entity.id,
                 tripDataId = entity.tripDataId,
@@ -54,8 +54,8 @@ class Mapper {
             )
         }
 
-        fun convertSensorDataToEntityModel(data: SensorData): SensorDataEntity {
-            return SensorDataEntity(
+        fun convertSensorDataToEntityModel(data: SensorData): com.uoa.co.db.entity.SensorDataEntity {
+            return com.uoa.co.db.entity.SensorDataEntity(
                 id = data.id,
                 tripDataId = data.tripDataId,
                 timestamp = data.timestamp,

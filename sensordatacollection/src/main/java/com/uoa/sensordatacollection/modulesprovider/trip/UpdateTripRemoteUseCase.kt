@@ -2,6 +2,7 @@ package com.uoa.sensordatacollection.modulesprovider.trip
 
 import com.uoa.sensordatacollection.data.datasources.remote.RemoteTripRepository
 import com.uoa.sensordatacollection.domain.model.TripData
+import com.uoa.sensordatacollection.util.Mapper
 
 import javax.inject.Inject
 
@@ -13,7 +14,7 @@ class UpdateTripRemoteUseCase @Inject constructor(private val remoteTripReposito
             val startTime = System.currentTimeMillis()
 
             // Store updated trip data remotely
-            remoteTripRepository.updateTripRemote(tripData.id, Mapper.convertTripDataToEntityModel(tripData))
+            remoteTripRepository.updateTripRemote(tripId, Mapper.convertTripDataToEntityModel(tripData))
 
             // Return true if both local and remote operations were successful
             true

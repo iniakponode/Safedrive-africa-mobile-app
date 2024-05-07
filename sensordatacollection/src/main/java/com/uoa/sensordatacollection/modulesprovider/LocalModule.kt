@@ -1,6 +1,6 @@
 package com.uoa.sensordatacollection.modulesprovider
 
-import com.uoa.core.db.dao.SensorDao
+import com.uoa.co.db.dao.SensorDao
 import com.uoa.sensordatacollection.data.datasources.local.LocalSensorDataSource
 import dagger.Module
 import dagger.Provides
@@ -14,7 +14,7 @@ object LocalModule {
 
     @Singleton
     @Provides
-    fun provideLocalSensorDataSource(sensorDataDao: com.uoa.core.db.dao.SensorDao): LocalSensorDataSource {
+    fun provideLocalSensorDataSource(sensorDataDao: com.uoa.co.db.dao.SensorDao): LocalSensorDataSource {
         return LocalSensorDataSource(sensorDataDao)
     }
 }

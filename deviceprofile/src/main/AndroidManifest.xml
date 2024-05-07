@@ -10,18 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDAAPP">
         <activity
-            android:name=".presentation.ui.RegistrationActivity"
-            android:exported="true"
-            android:label="@string/title_activity_registration"
-            android:resizeableActivity="true"
-            android:theme="@style/Theme.SDAAPP.NoActionBar"
-            >
+            android:name=".presentation.ui.SignupActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

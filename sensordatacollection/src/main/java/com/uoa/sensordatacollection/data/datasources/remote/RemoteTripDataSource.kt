@@ -1,21 +1,21 @@
 package com.uoa.sensordatacollection.data.datasources.remote
 
-import com.uoa.core.db.entity.TripDataEntity
-import com.uoa.core.appApiService.TripApiService
+import com.uoa.co.db.entity.TripDataEntity
+import com.uoa.co.appApiService.TripApiService
 
 
 // RemoteTripDataSource implementation
-class RemoteTripDataSource(private val apiService: com.uoa.core.appApiService.TripApiService) {
-    suspend fun createTripRemote(tripData: com.uoa.core.db.entity.TripDataEntity) {
+class RemoteTripDataSource(private val apiService: com.uoa.co.appApiService.TripApiService) {
+    suspend fun createTripRemote(tripData: com.uoa.co.db.entity.TripDataEntity) {
         apiService.createTrip(tripData)
     }
 
-    suspend fun getTripRemote(tripId: Long): com.uoa.core.db.entity.TripDataEntity {
+    suspend fun getTripRemote(tripId: Long): TripDataEntity {
         return apiService.getTripById(tripId)
     }
 
-    suspend fun updateTripRemote(tripId: Long,tripData: com.uoa.core.db.entity.TripDataEntity){
-        apiService.updateTripRemote(tripData.id,tripData)
+    suspend fun updateTripRemote(tripId: Long,tripData: TripDataEntity){
+        apiService.updateTripRemote(tripId,tripData)
     }
 
     suspend fun deleteTripByIdRemote(tripId: Long) {
@@ -26,7 +26,7 @@ class RemoteTripDataSource(private val apiService: com.uoa.core.appApiService.Tr
         apiService.deleteTripsForDriver(driverProfileId)
     }
 
-    suspend fun getTripsForDriverRemote(driverProfileId: Long): List<com.uoa.core.db.entity.TripDataEntity> {
+    suspend fun getTripsForDriverRemote(driverProfileId: Long): List<com.uoa.co.db.entity.TripDataEntity> {
         return apiService.getTripsForDriver(driverProfileId)
     }
 }

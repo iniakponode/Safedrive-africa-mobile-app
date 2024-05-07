@@ -3,6 +3,7 @@ package com.uoa.sensordatacollection.modulesprovider.trip
 
 import com.uoa.sensordatacollection.data.datasources.remote.RemoteTripRepository
 import com.uoa.sensordatacollection.domain.model.TripData
+import com.uoa.sensordatacollection.util.Mapper
 import javax.inject.Inject
 
 class SaveStartTripDataRemoteUseCase @Inject constructor(private val remoteTripRepository: RemoteTripRepository) {

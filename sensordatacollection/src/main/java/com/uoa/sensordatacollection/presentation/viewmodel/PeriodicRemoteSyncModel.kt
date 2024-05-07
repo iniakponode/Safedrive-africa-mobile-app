@@ -16,7 +16,7 @@ class PeriodicRemoteSyncModel @Inject constructor(
     private val syncSensorDataWorker: SyncSensorDataWorker
 ): ViewModel() {
 
-    fun syncRemoteData(liveOwner: LifecycleOwner, driverProfileId: Long, max_retry:Int) :String {
+    fun syncRemoteData(liveOwner: LifecycleOwner, max_retry:Int) :String {
         var syncTripDataState=""
         var syncSensorDataState=""
         var result=""

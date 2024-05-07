@@ -31,7 +31,7 @@ class AutoStartAndCollectSensorsUseCase @Inject constructor(
 
                 val tripData=startTripUseCase.execute(driverProfileId)
                 // Collect sensor readings for 5 minutes at 500Hz
-                collectSensorReadingsUseCase.execute(tripData.id)
+                collectSensorReadingsUseCase.execute(tripData)
             } else {
                 // Stop sensors if significant motion is not detected
 

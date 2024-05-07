@@ -13,13 +13,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.uoa.deviceprofile.domain.model.DriverProfile
 import com.uoa.deviceprofile.presentation.viewModel.DriverProfileViewModel
-import com.uoa.core.util.DateUtils
+import com.uoa.co.util.DateUtils
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.Instant
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun DriverProfileView(viewModel: DriverProfileViewModel = hiltViewModel(),
-                      driverProfile: DriverProfile) {
+fun DriverProfileView(viewModel: DriverProfileViewModel = hiltViewModel()) {
     var email= rememberSaveable { mutableStateOf("") }
     var password= rememberSaveable { mutableStateOf("") }
     var phone=rememberSaveable { mutableStateOf("")    }
@@ -91,7 +90,7 @@ fun DriverProfileView(viewModel: DriverProfileViewModel = hiltViewModel(),
                     drivingSchool=driving_school.value,
                     drivingLicense = driving_license.value,
                     email=email.value,
-                    phone=phone.value,
+//                    phone=phone.value,
                     phoneType = phone.value,
                     password = password.value,
                     registrationDateTime = Instant.now().toString()

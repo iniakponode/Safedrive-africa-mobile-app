@@ -101,7 +101,7 @@ dependencies {
     implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
 
 //    other project modules
-    implementation(project(":core"))
+    implementation(project(":co"))
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

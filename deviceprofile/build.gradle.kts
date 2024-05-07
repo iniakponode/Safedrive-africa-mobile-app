@@ -100,7 +100,7 @@ android {
         implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
 
 //    other project modules
-        implementation(project(":core"))
+        implementation(project(":co"))
     }
 }
 dependencies {
